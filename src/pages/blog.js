@@ -1,17 +1,16 @@
 import React from "react";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const BlogPage = () => {
     return (
         <div>
+            <Header />
             <h1>Blog</h1>
             <p>Posts will show up here.</p>
+            <Footer />
         </div>
     )
 }
 
 export default BlogPage;
-
-//Challenges: 
-// 1. creat an About page
-// 2. create a Contact page
-// 3. test your work
