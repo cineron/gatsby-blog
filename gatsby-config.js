@@ -4,6 +4,14 @@ module.exports = {
         author: "Ron Wilson"
     },
     plugins: [
-        "gatsby-plugin-sass"
+        "gatsby-plugin-sass",
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "src",
+                path: `${__dirname}/src/`
+            }
+
+        }
     ]
 }
