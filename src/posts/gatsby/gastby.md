@@ -8,6 +8,8 @@ Just going through a [Andrew Mead's](https://www.mead.io) (opens in this tab) Ga
 
 <a href="https://www.mead.io" target="_blank">Andrew Mead's</a> (opens in a tab)
 
+![Cohen's art I purchased](./cohenart_0025.jpg)
+
 ## Topics Covered
 
 1. Gatsby
@@ -18,7 +20,8 @@ Just going through a [Andrew Mead's](https://www.mead.io) (opens in this tab) Ga
 
 
 ---
-#### Links:
+
+#### Links
 
 
-#### References:
+#### References

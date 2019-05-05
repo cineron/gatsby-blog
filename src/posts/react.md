@@ -8,8 +8,9 @@ You'd think learning React is *easy*, but it's __not__. 😢
 
 
 ---
-#### Links:
+
+#### Links
 
 
-#### References:
+#### References
 
