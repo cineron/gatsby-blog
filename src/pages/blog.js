@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import { Link, useStaticQuery, graphql } from "gatsby";
+import blogStyles from "./blog.module.scss";
 
 // CHALLENGE: Render list of Blog Titles and Dates 
 // 1. Query the title and date for each post in the blog component 
@@ -36,14 +37,14 @@ const BlogPage = () => {
         <Layout>
             <h1>Blog</h1>
             <p>Posts will show up here.</p>
-            <ol>
+            <ol className={blogStyles.posts}>
                 {data.allMarkdownRemark.edges.map((edge) => {
                     return (
-                        <li>
+                        <li className={blogStyles.post}>
                             <Link to={`/blog/${edge.node.fields.slug}`}>
                                 <h2>{edge.node.frontmatter.title}</h2>
-                            </Link>
                                 <p>{edge.node.frontmatter.date}</p>
+                            </Link>
                         </li>
                     )
                 })}
