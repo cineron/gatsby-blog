@@ -13,37 +13,85 @@ import blogStyles from "./blog.module.scss";
 // 1. fetch the slug for the post
 // 2. use slug to generate link to the post page
 
+// CHALLENGE 3: Render Contentful Blog Posts 
+// 1. swap markdown query for contentful query
+// 2. update component to render new data
+
+
+
+// const BlogPage = () => {
+//     const data = useStaticQuery(graphql`
+//         query {
+//             allMarkdownRemark{
+//                 edges{
+//                     node{
+//                         frontmatter{
+//                             title
+//                             date
+//                         }
+//                         fields {
+//                                 slug
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     `);
 const BlogPage = () => {
     const data = useStaticQuery(graphql`
-        query {
-            allMarkdownRemark{
-                edges{
-                    node{
-                        frontmatter{
-                            title
-                            date
-                        }
-                        fields {
-                                slug
-                        }
-                    }
+    query {
+        allContentfulBlogPost (
+            sort: {
+                fields: publishedDate,
+                order: DESC
+            }
+        ){
+            edges {
+                node {
+                    title
+                    slug
+                    first: publishedDate(
+                        fromNow: true
+                    )
+                    second: publishedDate(
+                        formatString: "MMMM Do, YYYY"
+                    )
                 }
             }
         }
+    }
     `);
     // console.log(data);
 
+    // return (
+    //     <Layout>
+    //         <h1>Blog</h1>
+    //         <p>Posts will show up here.</p>
+    //         <ol className={blogStyles.posts}>
+    //             {data.allMarkdownRemark.edges.map((edge) => {
+    //                 return (
+    //                     <li className={blogStyles.post}>
+    //                         <Link to={`/blog/${edge.node.fields.slug}`}>
+    //                             <h2>{edge.node.frontmatter.title}</h2>
+    //                             <p>{edge.node.frontmatter.date}</p>
+    //                         </Link>
+    //                     </li>
+    //                 )
+    //             })}
+    //         </ol>
+    //     </Layout>
+    // )
     return (
         <Layout>
             <h1>Blog</h1>
             <p>Posts will show up here.</p>
             <ol className={blogStyles.posts}>
-                {data.allMarkdownRemark.edges.map((edge) => {
+                {data.allContentfulBlogPost.edges.map((edge) => {
                     return (
                         <li className={blogStyles.post}>
-                            <Link to={`/blog/${edge.node.fields.slug}`}>
-                                <h2>{edge.node.frontmatter.title}</h2>
-                                <p>{edge.node.frontmatter.date}</p>
+                            <Link to={`/blog/${edge.node.slug}`}>
+                                <h2>{edge.node.title}</h2>
+                                <p>First published {edge.node.first} on {edge.node.second}</p>
                             </Link>
                         </li>
                     )
