@@ -8,5 +8,5 @@
   A Gatsby Blog!
 </h1>
 
-This is a blog site created with Gatsby, using GraphQL, Markdown, Contentful, and Netlify.
+This is a blog site created with Gatsby, using GraphQL, Markdown, Contentful, and Netlify. Check it out!
 
