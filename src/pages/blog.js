@@ -32,7 +32,7 @@ const BlogPage = () => {
 
     return (
         <Layout>
-            <Head title="bsslog" />
+            <Head title="blog" />
             {/* <h1>Blog</h1>
             <p>Posts will show up here.</p> */}
             <ol className={blogStyles.posts}>
