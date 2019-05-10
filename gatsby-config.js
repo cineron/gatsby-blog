@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: "Motion + Design",
+        title: "cineron",
+        description: "(digital && design)",
         author: "Ron Wilson"
     },
     plugins: [
